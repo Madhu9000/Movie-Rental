@@ -6,3 +6,13 @@
 }
 
 <h2>@Model.CustomerName</h2>
+<ul>
+    <li class="text-primary">Membership Type: @Model.MembershipType.MembershipTypeName</li>
+    @{
+        bool flag = (Model.Birthdaydate == null ? false : true);
+        if (flag)
+        {
+            <li class="text-primary">Birthday: @Model.Birthdaydate.Value.ToShortDateString()</li>
+        }
+    }
+</ul>
